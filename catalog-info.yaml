@@ -14,6 +14,6 @@ spec:
 
 locations:
   - type: file
-    target: /home/vagrant/new-test/examples/entities.yaml
+    target: /home/vagrant/new-test/entities.yaml
     rules:
       - allow: [Component, System, API]
