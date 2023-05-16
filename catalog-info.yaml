@@ -11,3 +11,9 @@ spec:
   type: website
   owner: john@example.com
   lifecycle: experimental
+
+locations:
+  - type: file
+    target: /home/vagrant/new-test/examples/entities.yaml
+    rules:
+      - allow: [Component, System, API]
