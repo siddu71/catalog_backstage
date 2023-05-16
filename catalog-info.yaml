@@ -5,6 +5,8 @@ metadata:
   description: An example of a Backstage application.
   annotations:
     backstage.io/kubernetes-id: jenkins-operator
+  labels:
+    control-plane: controller-manager
 spec:
   type: website
   owner: john@example.com
