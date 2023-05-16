@@ -1,22 +1,11 @@
 apiVersion: backstage.io/v1alpha1
-kind: Catalog
+kind: Component
 metadata:
-  name: backstage-catalog
+  name: jenkins-operator
+  description: "Jenkins operator deployment"
+  annotations:
+    backstage.io/kubernetes-id: jenkins-operator
 spec:
-  # Add your Kind cluster as a location
-  locations:
-    - type: kubernetes
-      target: kind-platform
-      targetServiceAccount: default
-    - type: kubernetes
-      target: kind-worker
-      targetServiceAccount: default
-
-  # Define rules for allowing specific entity types
-  rules:
-    - allow: [Component, System, API]
-
-  # Optional: Define labels to be applied to all imported entities
-  metadata:
-    labels:
-      my-label: my-value
+  type: service
+  lifecycle: production
+  owner: my-team
