@@ -1,19 +1,22 @@
 apiVersion: backstage.io/v1alpha1
-kind: Component
+kind: Catalog
 metadata:
-  name: new-test
-  description: An example of a Backstage application.
-  annotations:
-    backstage.io/kubernetes-id: jenkins-operator
-  labels:
-    control-plane: controller-manager
+  name: backstage-catalog
 spec:
-  type: website
-  owner: john@example.com
-  lifecycle: experimental
+  # Add your Kind cluster as a location
+  locations:
+    - type: kubernetes
+      target: kind-platform
+      targetServiceAccount: default
+    - type: kubernetes
+      target: kind-worker
+      targetServiceAccount: default
 
-locations:
-  - type: file
-    target: /home/vagrant/new-test/entities.yaml
-    rules:
-      - allow: [Component, System, API]
+  # Define rules for allowing specific entity types
+  rules:
+    - allow: [Component, System, API]
+
+  # Optional: Define labels to be applied to all imported entities
+  metadata:
+    labels:
+      my-label: my-value
