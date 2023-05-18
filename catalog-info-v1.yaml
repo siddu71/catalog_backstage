@@ -9,4 +9,5 @@ spec:
   type: infrastructure
   lifecycle: production
   owner: my-team
-  providesApis: kubernetes
+  providesApis:
+    - kubernetes
