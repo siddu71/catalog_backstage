@@ -1,11 +1,25 @@
 apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
-  name: jenkins-operator
-  description: "Jenkins operator deployment"
+  name: platform-cluster
+  description: "Platform Kubernetes Cluster"
   annotations:
-    backstage.io/kubernetes-id: jenkins-operator
+    backstage.io/kubernetes-id: platform-cluster
 spec:
-  type: service
+  type: infrastructure
+  lifecycle: production
+  owner: my-team
+
+---
+
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: worker-cluster
+  description: "Worker Kubernetes Cluster"
+  annotations:
+    backstage.io/kubernetes-id: worker-cluster
+spec:
+  type: infrastructure
   lifecycle: production
   owner: my-team
