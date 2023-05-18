@@ -9,7 +9,4 @@ spec:
   type: infrastructure
   lifecycle: production
   owner: my-team
-  providesApis:
-    - name: kubernetes
-      openApiRef:
-        $ref: "./kubernetes-openapi.yaml"
+  providesApis: kubernetes
